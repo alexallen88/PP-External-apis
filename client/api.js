@@ -9,3 +9,9 @@ export function getWelcome () {
     .then(response => response.body)
 }
 // ***   ***   ***
+
+export function getMovie () {
+  return request
+    .get('https://api.themoviedb.org/api/v1')
+    .then(response => response.body)
+}
