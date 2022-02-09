@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import '../../server/public/styles.css'
 
 import { kanyeQuote } from '../api'
 
