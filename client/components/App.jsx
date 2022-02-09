@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react'
 
-import { getWelcome, getMovie } from '../api'
+import { kanyeQuote } from '../api'
 
 function App () {
   const [welcomeStatement, setWelcomeStatement] = useState('')
-  const [movie, setMovie] = useState({ })
+  const [movie, setKayne] = useState({ })
+
+  // useEffect(() => {
+  //   getWelcome()
+  //     .then(res => {
+  //       setWelcomeStatement(res.statement)
+  //       return null
+  //     })
+  //     .catch((err) => {
+  //       console.error(err.message)
+  //     })
+  // })
 
   useEffect(() => {
-    getWelcome()
-      .then(res => {
-        setWelcomeStatement(res.statement)
-        return null
-      })
-      .catch((err) => {
-        console.error(err.message)
-      })
-  })
-
-  getMovie()
+    setLoading(true)
+  kanyeQuote()
     .then(res => {
-      setMovie(res)
+      setKayne(res)
       return null
     })
     .catch((err) => {
@@ -28,7 +30,7 @@ function App () {
 
   return (
     <h1>{welcomeStatement}</h1>
-    {movie.value ? <p>{movie.value}</p> : <p>Movies Movies Movies!</p>}
+    <h2>{}</h2>
   )
 }
 
