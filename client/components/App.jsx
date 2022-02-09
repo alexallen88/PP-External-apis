@@ -3,19 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { kanyeQuote } from '../api'
 
 function App () {
-  const [welcomeStatement, setWelcomeStatement] = useState('')
-  const [movie, setKayne] = useState({ })
+  const [kayneData, setKayne] = useState(null)
+  // const [loading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   getWelcome()
-  //     .then(res => {
-  //       setWelcomeStatement(res.statement)
-  //       return null
-  //     })
-  //     .catch((err) => {
-  //       console.error(err.message)
-  //     })
-  // })
 
   useEffect(() => {
     setLoading(true)
@@ -29,8 +19,10 @@ function App () {
     })
 
   return (
-    <h1>{welcomeStatement}</h1>
-    <h2>{}</h2>
+    <>
+    <h1>`Kayne 🐐🐐🐐`</h1>
+    {kanyeQuote.quote ? <p>{kanyeQuote.quote}</p> : <p>Kayne Quote incoming!</p>}
+    </>
   )
 }
 
